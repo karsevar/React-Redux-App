@@ -1,6 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import styled from 'styled-components';
+import Loader from 'react-loader-spinner';
 
 import CharacterCard from './CharacterCard';
 
@@ -27,10 +28,20 @@ const CharacterList = props => {
                 {props.isFetching ? 'Loading Data' : 'Fetch Rick and Mortys!'}
             </button>
 
-            <CharactersDiv>
-                {props.characters && 
-                    props.characters.map((character, index) => (<CharacterCard key={index} character={character} />))}
-            </CharactersDiv>
+            {props.isFetching ? (
+                <Loader 
+                    type="ThreeDots" 
+                    color='grey' 
+                    height={400} 
+                    width={400} 
+                />
+            ) : (
+                <CharactersDiv>
+                    {props.characters && 
+                        props.characters.map((character, index) => (<CharacterCard key={index} character={character} />))}
+                </CharactersDiv>
+            )
+            }
         </div>
     )
 }
