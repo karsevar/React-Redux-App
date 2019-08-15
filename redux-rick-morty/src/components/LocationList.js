@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import {connect} from 'react-redux';
 import Loader from 'react-loader-spinner';
 
@@ -9,15 +9,19 @@ import {CharactersDiv, ErrorParagraph, FetchButton} from '../styles/appStyles';
 
 const LocationList = props => {
 
-    const fetchLocations = e => {
-        e.preventDefault();
+    // const fetchLocations = e => {
+    //     e.preventDefault();
+    //     props.getLocations();
+    // }
+
+    useEffect(() => {
         props.getLocations();
-    }
+    }, [])
 
     return (
         <div className='locations-container'>
 
-            {props.locations.length === 0 ? (
+            {/* {props.locations.length === 0 ? (
                 <FetchButton
                     onClick={fetchLocations}>
                     {props.isFetching ? 'Loading Data' : 'Fetch Rick and Mortys!'}
@@ -25,7 +29,7 @@ const LocationList = props => {
                 ) : (
                     null
                 )
-            }
+            } */}
 
             {props.isFetching ? (
                 <Loader 
