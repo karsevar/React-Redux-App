@@ -47,7 +47,6 @@ const LocationList = props => {
 }
 
 const mapStateToProps = state => ({
-    characters: state.characters,
     locations: state.locations,
     error: state.error,
     isFetching: state.isFetching

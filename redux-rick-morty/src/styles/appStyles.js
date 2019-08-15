@@ -71,3 +71,15 @@ export const CharacterParagraph = styled.p`
   margin-bottom: 5px;
   margin-top: 5px;
 `;
+
+export const LocationContainer = styled.div`
+  box-shadow: 1px 1px 9px 2px #888888;
+  border-radius: 5px;
+  width: 350px;
+  margin-bottom: 30px;
+  padding: 10px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;
