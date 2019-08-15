@@ -23,8 +23,13 @@ function reducer(state = initialState, action) {
             }
 
         case FETCH_CHARACTERS_SUCCESS:
-            console.log(action.type, action.payload);
-            return state
+            // console.log(action.type, action.payload);
+            return {
+                ...state,
+                isFetching: false,
+                error: '',
+                characters: action.payload
+            }
 
         case FETCH_CHARACTERS_FAILURE:
             console.log(action.type, action.payload);

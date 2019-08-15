@@ -1,6 +1,8 @@
 import React from 'react';
 import {connect} from 'react-redux';
 
+import CharacterCard from './CharacterCard';
+
 import {getCharacters} from '../actions';
 
 const CharacterList = props => {
@@ -17,6 +19,8 @@ const CharacterList = props => {
                 onClick={fetchCharacters}>
                 {props.isFetching ? 'Loading Data' : 'Fetch Rick and Mortys!'}
             </button>
+            {props.characters && 
+                props.characters.map((character, index) => (<CharacterCard key={index} character={character} />))}
         </div>
     )
 }
