@@ -4,6 +4,7 @@ export const CharactersDiv = styled.div`
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
+    margin-top: 10px;
 `;
 
 export const ErrorParagraph = styled.p`
