@@ -6,6 +6,7 @@ import {
 
 const initialState = {
     characters: [],
+    locations: [],
     error: '',
     isFetching: false
 };

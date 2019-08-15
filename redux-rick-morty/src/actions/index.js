@@ -18,3 +18,19 @@ export const getCharacters = () => dispatch => {
         })
     
 }
+
+export const FETCH_LOCATIONS_START = 'FETCH_LOCATIONS_START';
+export const FETCH_LOCATIONS_SUCCESS = 'FETCH_LOCATIONS_SUCCESS';
+export const FETCH_LOCATIONS_FAILURE = 'FETCH_LOCATIONS_FAILURE';
+
+export const getLocations = () => dispatch => {
+    dispatch({type: FETCH_LOCATIONS_START});
+    axios
+        .get('https://rickandmortyapi.com/api/location') 
+        .then(res => {
+            console.log(res.data);
+        })
+        .catch(err => {
+            console.log(err);
+        })
+}
