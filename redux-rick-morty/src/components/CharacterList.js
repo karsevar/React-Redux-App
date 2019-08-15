@@ -13,6 +13,16 @@ const CharactersDiv = styled.div`
     justify-content: space-evenly;
 `;
 
+const ErrorParagraph = styled.p`
+    padding: 16px;
+    background-color: #ffb7b7;
+    color: red;
+    border: solid 1px #f39595;
+    border-radius: 4px;
+    max-width: 700px;
+    margin: 16px auto;
+`;
+
 const CharacterList = props => {
 
     const fetchCharacters = e => {
@@ -42,6 +52,7 @@ const CharacterList = props => {
                 </CharactersDiv>
             )
             }
+            {props.error && <ErrorParagraph>{props.error}</ErrorParagraph>}
         </div>
     )
 }
