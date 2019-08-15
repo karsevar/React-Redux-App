@@ -7,10 +7,9 @@ import CharacterCard from './CharacterCard';
 import {getCharacters} from '../actions';
 
 const CharactersDiv = styled.div`
-    margin: 10px auto;
-    width: 80%;
     display: flex;
     flex-wrap: wrap;
+    justify-content: space-evenly;
 `;
 
 const CharacterList = props => {
