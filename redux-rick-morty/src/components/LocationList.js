@@ -2,7 +2,7 @@ import React from 'react';
 import {connect} from 'react-redux';
 import Loader from 'react-loader-spinner';
 
-// import LocationCard from './LocationCard';
+import LocationCard from './LocationCard';
 import {getLocations} from '../actions';
 
 import {CharactersDiv, ErrorParagraph, FetchButton} from '../styles/appStyles';
@@ -36,6 +36,7 @@ const LocationList = props => {
                 />
             ) : (
                 <CharactersDiv>
+                    {props.locations.map((location, index) => <LocationCard key={index} location={location} />)}
                     
                 </CharactersDiv>
             )

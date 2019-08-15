@@ -28,9 +28,11 @@ export const getLocations = () => dispatch => {
     axios
         .get('https://rickandmortyapi.com/api/location') 
         .then(res => {
-            console.log(res.data);
+            // console.log(res.data.results);
+            dispatch({type: FETCH_LOCATIONS_SUCCESS, payload: res.data.results}) 
         })
         .catch(err => {
-            console.log(err);
+            // console.log(err);
+            dispatch({type: FETCH_LOCATIONS_FAILURE, payload:`${err.response.data.error} ${err.response.status}`}) 
         })
 }
