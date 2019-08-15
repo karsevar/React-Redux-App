@@ -9,12 +9,12 @@ export const getCharacters = () => dispatch => {
     axios
         .get('https://rickandmortyapi.com/api/character/?page=1')
         .then(res => {
-            console.log(res);
-            // dispatch({type: 'FETCH_CHARACTERS_SUCCESS', payload: res.data.results})
+            // console.log(res);
+            dispatch({type: 'FETCH_CHARACTERS_SUCCESS', payload: res.data.results})
         })
         .catch(err => {
-            console.log(err);
-            // dispatch({type: FETCH_CHARACTERS_FAILURE, payload: err.response.status}) 
+            // console.log(err);
+            dispatch({type: FETCH_CHARACTERS_FAILURE, payload: err.response.status}) 
         })
     
 }
