@@ -15,7 +15,7 @@ const CharacterList = props => {
             <button 
                 className='character-button'
                 onClick={fetchCharacters}>
-            Fetch Rick and Mortys!
+                {props.isFetching ? 'Loading Data' : 'Fetch Rick and Mortys!'}
             </button>
         </div>
     )
@@ -23,7 +23,8 @@ const CharacterList = props => {
 
 const mapStateToProps = state => ({
     characters: state.characters,
-    error: state.error
+    error: state.error,
+    isFetching: state.isFetching
 })
 
 export default connect(

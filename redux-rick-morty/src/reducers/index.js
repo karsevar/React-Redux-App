@@ -15,8 +15,12 @@ function reducer(state = initialState, action) {
     
     switch (action.type) {
         case FETCH_CHARACTERS_START:
-            console.log(action.type);
-            return state
+            // console.log(action.type);
+            return {
+                ...state,
+                isFetching: true,
+                error: ''
+            }
 
         case FETCH_CHARACTERS_SUCCESS:
             console.log(action.type, action.payload);
