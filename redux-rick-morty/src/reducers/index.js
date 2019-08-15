@@ -16,12 +16,18 @@ function reducer(state = initialState, action) {
     switch (action.type) {
         case FETCH_CHARACTERS_START:
             console.log(action.type);
+            return state
 
         case FETCH_CHARACTERS_SUCCESS:
             console.log(action.type, action.payload);
+            return state
 
         case FETCH_CHARACTERS_FAILURE:
             console.log(action.type, action.payload);
+            return state
+        
+        default: 
+            return state
     }
 }
 
